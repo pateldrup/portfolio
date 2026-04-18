@@ -20,6 +20,8 @@ export const Interface = () => {
             <Projects />
             <Certificates />
             <Contact />
+
+
         </div>
     );
 };

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt, FaYoutube, FaFigma } from "react-icons/fa";
 
 const projectsData = [
     {
@@ -11,7 +11,8 @@ const projectsData = [
         description: "CNBC Website clone with modern responsive UI. Built homepage with breaking news sections, market updates, category navigation, trending news, and clean layout.",
         tech: ["React", "Node.js", "Express", "MongoDB", "Redux", "Stripe"],
         github: "https://github.com/pateldrup/WebSite_1.git",
-        live: "https://graceful-brigadeiros-6228a8.netlify.app/"
+        live: "https://graceful-brigadeiros-6228a8.netlify.app/",
+        video: "https://youtu.be/Qpzsk6bo7rg?si=Sdx0PkQ54SizmiTa"
     },
     // {
     //     id: 2,
@@ -51,7 +52,8 @@ const projectsData = [
         description: "A responsive e-commerce website clone of Havells India - featuring product catalog, category filters, search functionality, and modern UI design for electronics shopping.",
         tech: ["React", "CSS", "JavaScript", "Responsive Design"],
         github: "https://github.com/pateldrup/WebSite_2.git",
-        live: "https://harmonious-tarsier-59ea5d.netlify.app/"
+        live: "https://harmonious-tarsier-59ea5d.netlify.app/",
+        video: "https://youtu.be/CaBV6JwoGcM?si=chDEC4duroBrwSvF"
     },
     {
         id: 6,
@@ -61,7 +63,8 @@ const projectsData = [
         description: "A PTE Academic & PTE Core practice platform clone with AI-powered scoring features. Modern landing page with course navigation, practice modules, and user authentication.",
         tech: ["React", "CSS", "JavaScript", "Responsive Design"],
         github: "https://github.com/pateldrup/WebSite_3.git",
-        live: "https://steady-medovik-9e9c73.netlify.app/"
+        live: "https://steady-medovik-9e9c73.netlify.app/",
+        video: "https://youtu.be/odvu4arlmic?si=paIc0h_Tm8rI2Lkg"
     },
     {
         id: 7,
@@ -71,7 +74,8 @@ const projectsData = [
         description: "A stunning automotive website clone of Tata Motors featuring car showcases, dealer locator, festive offers, and responsive design with modern animations.",
         tech: ["React", "CSS", "JavaScript", "Responsive Design"],
         github: "https://github.com/pateldrup/WebSite_4",
-        live: "https://tata-motors-cobbler-afad84.netlify.app/"
+        live: "https://tata-motors-cobbler-afad84.netlify.app/",
+        video: "https://youtu.be/KKEGnaIBX84?si=WMmA-BDYUshudX_A"
     },
     {
         id: 8,
@@ -81,7 +85,8 @@ const projectsData = [
         description: "A telecom website clone of Jio featuring mobile recharge plans, bill payments, 5G offers, and a modern festive-themed landing page with smooth animations.",
         tech: ["React", "CSS", "JavaScript", "Responsive Design"],
         github: "https://github.com/pateldrup/WebSite_5.git",
-        live: " https://jio-rabanadas-b37c64.netlify.app/"
+        live: " https://jio-rabanadas-b37c64.netlify.app/",
+        video: "https://youtu.be/cGB9TtqjBO0?si=2IA8LXmuEX2zjD_6"
     },
     {
         id: 9,
@@ -91,7 +96,8 @@ const projectsData = [
         description: "A nutrition and recipes website clone featuring recipe categories, product showcases, rewards system, and a beautiful pastel-themed responsive design.",
         tech: ["React", "CSS", "JavaScript", "Responsive Design"],
         github: "https://github.com/pateldrup/WebSite_6.git",
-        live: "https://stupendous-cat-afe0fe.netlify.app/"
+        live: "https://stupendous-cat-afe0fe.netlify.app/",
+        video: "https://youtu.be/cGB9TtqjBO0?si=F1rpuF_EwXu5sCO-"
     },
     {
         id: 10,
@@ -112,6 +118,33 @@ const projectsData = [
         tech: ["JavaScript", "CSS", "HTML", "Game Logic"],
         github: "https://github.com/pateldrup/Typing_Speed_Test.git",
         live: "https://typing-speeds-game.netlify.app/"
+    },
+    {
+        id: 12,
+        title: "RedBus Mobile App UI",
+        category: "UI/UX Design",
+        image: "https://i.ibb.co/Kc79vT0G/Screenshot-2026-04-17-174154.png",
+        description: "Design a modern and user-friendly bus booking mobile interface inspired by RedBus. Focus on seamless ticket search, intuitive seat selection, and smooth booking flow. Use clean typography, strong color hierarchy, and mobile-first UX to enhance usability and conversion.",
+        tech: ["Figma", "Mobile UI", "UX Design"],
+        figma: "https://www.figma.com/design/Y0DBg2uPEGtj2sC3ePOUZ8/Untitled?node-id=57-335&t=ZTSuJM7jmLBCcmlf-1"
+    },
+    {
+        id: 13,
+        title: "CodingGita Learning Platform UI",
+        category: "UI/UX Design",
+        image: "https://i.ibb.co/zhfjgPVC/Screenshot-2026-04-17-174017.png",
+        description: "A clean and structured college learning platform UI designed for students. Includes course browsing, dashboard tracking, and easy navigation. Focused on clarity, accessibility, and structured content layout for better learning experience.",
+        tech: ["Figma", "Dashboard UI", "UX Design"],
+        figma: "https://www.figma.com/design/Y0DBg2uPEGtj2sC3ePOUZ8/Untitled?node-id=392-160&t=ZTSuJM7jmLBCcmlf-1"
+    },
+    {
+        id: 14,
+        title: "BookMyShow Movie Booking UI",
+        category: "UI/UX Design",
+        image: "https://i.ibb.co/mrGphgDM/Screenshot-2026-04-17-173820.png",
+        description: "A visually rich and engaging movie booking interface inspired by BookMyShow. Designed for easy movie discovery, showtime selection, and quick booking. Emphasis on visual hierarchy, smooth navigation, and engaging user experience.",
+        tech: ["Figma", "Web UI", "Interaction Design"],
+        figma: "https://i.ibb.co/TBznnFw0/BOOKmy-Show.pngx`"
     }
 ];
 
@@ -170,25 +203,53 @@ const ProjectCard = ({ project }) => {
 
                 {/* Action Buttons */}
                 <div className="flex gap-4 pt-2 border-t border-white/5">
-                    <a
-                        href={project.live}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-sm text-emerald-400 hover:text-emerald-300 transition-colors group/link"
-                    >
-                        <FaExternalLinkAlt className="text-base" />
-                        <span className="font-medium">Live Demo</span>
-                    </a>
-                    <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-sm text-emerald-400 hover:text-emerald-300 transition-colors group/link"
-                    >
-                        <FaGithub className="text-lg" />
-                        <span className="font-medium">Code</span>
-                    </a>
+                    {project.live && (
+                        <a
+                            href={project.live}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 text-sm text-emerald-400 hover:text-emerald-300 transition-colors group/link"
+                        >
+                            <FaExternalLinkAlt className="text-base" />
+                            <span className="font-medium">Live Demo</span>
+                        </a>
+                    )}
+                    {project.github && (
+                        <a
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 text-sm text-emerald-400 hover:text-emerald-300 transition-colors group/link"
+                        >
+                            <FaGithub className="text-lg" />
+                            <span className="font-medium">Code</span>
+                        </a>
+                    )}
+                    {project.video && (
+                        <a
+                            href={project.video}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 text-sm text-emerald-400 hover:text-emerald-300 transition-colors group/link ml-auto"
+                        >
+                            <FaYoutube className="text-xl" />
+                            <span className="font-medium">Video</span>
+                        </a>
+                    )}
                 </div>
+                {project.figma && (
+                    <div className="mt-4">
+                        <a
+                            href={project.figma}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-center w-full gap-2 text-sm text-white bg-blue-600/20 hover:bg-blue-600/40 border border-blue-500/30 rounded-full py-2.5 transition-all duration-300"
+                        >
+                            <FaFigma className="text-lg text-blue-400" />
+                            <span className="font-medium">View Figma Design</span>
+                        </a>
+                    </div>
+                )}
             </div>
         </motion.div>
     );
@@ -209,8 +270,8 @@ export const Projects = () => {
                 </h2>
 
                 {/* Filters */}
-                <div className="flex justify-center gap-4 mb-12">
-                    {["All", "Full Stack", "Frontend"].map((category) => (
+                <div className="flex justify-center flex-wrap gap-4 mb-12">
+                    {["All", "Full Stack", "Frontend", "UI/UX Design"].map((category) => (
                         <button
                             key={category}
                             onClick={() => setFilter(category)}

@@ -25,94 +25,141 @@ export const About = () => {
             <div className="max-w-6xl mx-auto w-full">
 
                 {/* ========================================= */}
-                {/* SECTION 1: ABOUT ME (Text + Image) */}
+                {/* SECTION 1: ABOUT ME (Centered Text, No Image) */}
                 {/* ========================================= */}
                 <div className="mb-24">
-                    {/* Section Header */}
-                    <div className="about-reveal mb-12">
-                        <p className="text-sm uppercase tracking-[0.25em] text-blue-400 mb-4">About Me</p>
+                    {/* Section Header - Centered & Bigger */}
+                    <div className="about-reveal mb-16 text-center">
+                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-4">About Me</h2>
+                        <div className="w-24 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 mx-auto rounded-full"></div>
                     </div>
 
-                    {/* Two Column Layout: Text Left, Image Right */}
-                    <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
-
-                        {/* Left Column: About Me Text */}
-                        <div className="about-reveal order-2 md:order-1">
-                            <p className="text-gray-400 text-lg leading-relaxed mb-6">
-                                I'm a <span className="text-white">passionate full stack developer</span> with a strong foundation in computer science and a keen eye for creating seamless, user-centric web applications.
-                            </p>
-                            <p className="text-gray-400 text-lg leading-relaxed mb-6">
-                                My journey in tech began at <span className="text-white">Swaminarayan University</span>, where I honed my skills in various programming languages and software development methodologies.
-                            </p>
-                            <p className="text-gray-400 text-lg leading-relaxed mb-8">
-                                I believe in clean code, intuitive design, and continuous learning.
-                            </p>
-                        </div>
-
-                        {/* Right Column: Personal Image */}
-                        <div className="about-reveal order-1 md:order-2 flex justify-center">
-                            <div className="relative">
-                                <img
-                                    src="/profile.jpg"
-                                    alt="Drup Patel - Full Stack Developer"
-                                    className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 object-cover rounded-2xl shadow-2xl"
-                                />
-                                {/* Subtle glow effect behind image */}
-                                <div className="absolute inset-0 -z-10 bg-gradient-to-br from-blue-500/20 via-purple-500/10 to-transparent rounded-2xl blur-2xl scale-110" />
-                            </div>
-                        </div>
+                    {/* Centered Text Content */}
+                    <div className="about-reveal max-w-4xl mx-auto text-center">
+                        <p className="text-gray-300 text-xl md:text-2xl leading-relaxed mb-8">
+                            I'm a <span className="text-cyan-400 font-semibold">passionate full stack developer</span> with a strong foundation in computer science and a keen eye for creating seamless, user-centric web applications.
+                        </p>
+                        <p className="text-gray-300 text-xl md:text-2xl leading-relaxed mb-8">
+                            My journey in tech began at <span className="text-cyan-400 font-semibold">Swaminarayan University</span>, where I honed my skills in various programming languages and software development methodologies.
+                        </p>
+                        <p className="text-gray-300 text-xl md:text-2xl leading-relaxed">
+                            I believe in clean code, intuitive design, and continuous learning.
+                        </p>
                     </div>
                 </div>
 
                 {/* ========================================= */}
-                {/* SECTION 2: EDUCATION (Full Width Below) */}
+                {/* SECTION 2: EDUCATION (Card-based Zigzag Layout) */}
                 {/* ========================================= */}
                 <div className="about-reveal">
-                    <div className="mb-12">
-                        <p className="text-sm uppercase tracking-[0.25em] text-blue-400 mb-4">Education</p>
-                        <h3 className="text-3xl md:text-4xl font-semibold text-white tracking-tight">
-                            Academic Journey
-                        </h3>
+                    {/* Section Header - Bigger */}
+                    <div className="mb-16 text-center">
+                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-4">Education</h2>
+                        <div className="w-24 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 mx-auto rounded-full"></div>
                     </div>
 
-                    {/* Full Width Vertical Timeline */}
-                    <div className="max-w-3xl">
-                        <div className="border-l-2 border-white/10 pl-8 space-y-10">
+                    {/* Zigzag Timeline Container */}
+                    <div className="relative max-w-5xl mx-auto">
 
-                            {/* College - B.Tech */}
-                            <div className="relative">
-                                <div className="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-blue-500 border-4 border-[#050505]" />
-                                <span className="text-xs text-blue-400 font-mono uppercase tracking-wider">2025</span>
-                                <h4 className="text-xl text-white font-medium mt-2">B.Tech in Computer Science Engineering</h4>
-                                <p className="text-gray-500 mt-1">Swaminarayan University</p>
-                                <p className="text-gray-400 text-sm mt-2 leading-relaxed">
-                                    Pursuing Computer Science with focus on software development, data structures, algorithms, and full-stack web technologies.
-                                </p>
+                        {/* Center Vertical Line */}
+                        <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-cyan-500/30 -translate-x-1/2"></div>
+
+                        {/* Education Card 1 - B.Tech (Left Side) */}
+                        <div className="relative flex flex-col md:flex-row items-center mb-16">
+                            <div className="w-full md:w-1/2 md:pr-12 md:text-right">
+                                <div className="bg-gray-900/80 border border-cyan-500/30 rounded-xl p-6 md:p-8 hover:border-cyan-500/60 transition-all duration-300">
+                                    <h3 className="text-2xl md:text-3xl font-bold text-cyan-400 mb-4">Computer Science</h3>
+                                    <div className="space-y-2 mb-4">
+                                        <p className="text-white text-lg md:text-xl flex items-center justify-end gap-2">
+                                            <span>Swaminarayan University</span>
+                                            <span className="text-cyan-400">🎓</span>
+                                        </p>
+                                        <p className="text-gray-400 text-base md:text-lg flex items-center justify-end gap-2">
+                                            <span>Kalol, Gujarat, India</span>
+                                            <span className="text-cyan-400">📍</span>
+                                        </p>
+                                        <p className="text-gray-400 text-base md:text-lg flex items-center justify-end gap-2">
+                                            <span>2025 - 2029</span>
+                                            <span className="text-cyan-400">📅</span>
+                                        </p>
+                                    </div>
+                                    <ul className="text-gray-300 text-base md:text-lg space-y-2 md:text-right">
+                                        <li>• Strong foundation in Frontend and Backend Web Development</li>
+                                        <li>• Proficient in HTML, CSS, JavaScript, React, Node.js, Express, MongoDB</li>
+                                        <li>• Skilled in problem solving, UI/UX design, and database management</li>
+                                        <li>• Actively learning advanced web technologies</li>
+                                    </ul>
+                                </div>
                             </div>
-
-                            {/* HSC - Higher Secondary */}
-                            <div className="relative">
-                                <div className="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-purple-500 border-4 border-[#050505]" />
-                                <span className="text-xs text-purple-400 font-mono uppercase tracking-wider">2023 - 2025</span>
-                                <h4 className="text-xl text-gray-200 font-medium mt-2">HSC (Higher Secondary Certificate)</h4>
-                                <p className="text-gray-500 mt-1">Pioneer School of Science Patan</p>
-                                <p className="text-gray-400 text-sm mt-2 leading-relaxed">
-                                    Completed 12th grade with Science stream (Physics, Chemistry, Mathematics) and Computer Science.
-                                </p>
-                            </div>
-
-                            {/* SSC - Secondary */}
-                            <div className="relative">
-                                <div className="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-gray-600 border-4 border-[#050505]" />
-                                <span className="text-xs text-gray-500 font-mono uppercase tracking-wider">2022 - 2023</span>
-                                <h4 className="text-xl text-gray-300 font-medium mt-2">SSC (Secondary School Certificate)</h4>
-                                <p className="text-gray-500 mt-1">Pioneer School of Science Patan</p>
-                                <p className="text-gray-400 text-sm mt-2 leading-relaxed">
-                                    Completed 10th grade with distinction, developing early interest in computers and programming.
-                                </p>
-                            </div>
-
+                            {/* Timeline Dot */}
+                            <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-6 h-6 bg-cyan-500 rounded-full border-4 border-gray-900 z-10"></div>
+                            <div className="w-full md:w-1/2"></div>
                         </div>
+
+                        {/* Education Card 2 - HSC (Right Side) */}
+                        <div className="relative flex flex-col md:flex-row items-center mb-16">
+                            <div className="w-full md:w-1/2"></div>
+                            {/* Timeline Dot */}
+                            <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-6 h-6 bg-cyan-500 rounded-full border-4 border-gray-900 z-10"></div>
+                            <div className="w-full md:w-1/2 md:pl-12">
+                                <div className="bg-gray-900/80 border border-cyan-500/30 rounded-xl p-6 md:p-8 hover:border-cyan-500/60 transition-all duration-300">
+                                    <h3 className="text-2xl md:text-3xl font-bold text-cyan-400 mb-4">Higher Secondary Education (Science)</h3>
+                                    <div className="space-y-2 mb-4">
+                                        <p className="text-white text-lg md:text-xl flex items-center gap-2">
+                                            <span className="text-cyan-400">🎓</span>
+                                            <span>Pioneer School of Science</span>
+                                        </p>
+                                        <p className="text-gray-400 text-base md:text-lg flex items-center gap-2">
+                                            <span className="text-cyan-400">📍</span>
+                                            <span>Patan, Gujarat, India</span>
+                                        </p>
+                                        <p className="text-gray-400 text-base md:text-lg flex items-center gap-2">
+                                            <span className="text-cyan-400">📅</span>
+                                            <span>2023 - 2025</span>
+                                        </p>
+                                    </div>
+                                    <ul className="text-gray-300 text-base md:text-lg space-y-2">
+                                        <li>• Completed 12th grade with Science stream (PCM)</li>
+                                        <li>• Focus on Physics, Chemistry, and Mathematics</li>
+                                        <li>• Built strong academic foundation for engineering</li>
+                                        <li>• Participated in science fairs and tech activities</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Education Card 3 - SSC (Left Side) */}
+                        <div className="relative flex flex-col md:flex-row items-center">
+                            <div className="w-full md:w-1/2 md:pr-12 md:text-right">
+                                <div className="bg-gray-900/80 border border-cyan-500/30 rounded-xl p-6 md:p-8 hover:border-cyan-500/60 transition-all duration-300">
+                                    <h3 className="text-2xl md:text-3xl font-bold text-cyan-400 mb-4">Secondary School Certificate (SSC)</h3>
+                                    <div className="space-y-2 mb-4">
+                                        <p className="text-white text-lg md:text-xl flex items-center justify-end gap-2">
+                                            <span>Pioneer School of Science</span>
+                                            <span className="text-cyan-400">🎓</span>
+                                        </p>
+                                        <p className="text-gray-400 text-base md:text-lg flex items-center justify-end gap-2">
+                                            <span>Patan, Gujarat, India</span>
+                                            <span className="text-cyan-400">📍</span>
+                                        </p>
+                                        <p className="text-gray-400 text-base md:text-lg flex items-center justify-end gap-2">
+                                            <span>2022 - 2023</span>
+                                            <span className="text-cyan-400">📅</span>
+                                        </p>
+                                    </div>
+                                    <ul className="text-gray-300 text-base md:text-lg space-y-2 md:text-right">
+                                        <li>• Completed 10th grade with distinction</li>
+                                        <li>• Strong aptitude in Mathematics and Science</li>
+                                        <li>• Developed early interest in computers and programming</li>
+                                        <li>• Recognized for discipline and academic excellence</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            {/* Timeline Dot */}
+                            <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-6 h-6 bg-cyan-500 rounded-full border-4 border-gray-900 z-10"></div>
+                            <div className="w-full md:w-1/2"></div>
+                        </div>
+
                     </div>
                 </div>
 

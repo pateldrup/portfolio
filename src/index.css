@@ -21,9 +21,6 @@ body {
     margin: 0;
     padding: 0;
     width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    /* Important for R3F ScrollControls */
     background-color: #050505;
     color: #fff;
 }
@@ -48,4 +45,34 @@ html.lenis body {
 
 .lenis.lenis-scrolling iframe {
     pointer-events: none;
+}
+
+/* Hide scrollbar to remove the vertical highlight */
+::-webkit-scrollbar {
+    display: none;
+}
+
+* {
+    scrollbar-width: none;
+}
+
+/* Scroll indicator animation */
+@keyframes scroll-line {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(250%);
+        opacity: 0;
+    }
+}
+
+.animate-scroll-line {
+    animation: scroll-line 2s ease-in-out infinite;
 }

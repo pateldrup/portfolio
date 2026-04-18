@@ -130,17 +130,7 @@ const GlassCard = ({ children, className = "", delay = 0 }) => {
     const cardRef = useRef(null);
 
     useLayoutEffect(() => {
-        const card = cardRef.current;
-        if (!card) return;
-
-        // Floating animation
-        gsap.to(card, {
-            y: -8,
-            duration: 3,
-            repeat: -1,
-            yoyo: true,
-            ease: "sine.inOut",
-        });
+        // No floating animation - cards are now static
     }, []);
 
     return (
@@ -236,28 +226,17 @@ export const Contact = () => {
                 import.meta.env.VITE_EMAILJS_SERVICE_ID,
                 import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
                 {
-                    from_name: formData.name,
-                    from_email: formData.email,
-                    subject: formData.subject,
-                    message: formData.message,
+                    from_name: formData.name,      // The person sending the message
+                    reply_to: formData.email,      // The default variable for sender's email
+                    email_id: formData.email,      // Common alternative variable
+                    subject: formData.subject,     // What the subject is
+                    message: formData.message,     // The actual message body
                     to_name: 'Drup',
                 },
                 import.meta.env.VITE_EMAILJS_PUBLIC_KEY
             );
 
-            console.log('Email sent:', emailResult);
-
-            // 2. Save to MongoDB via backend API
-            const apiResponse = await fetch('http://localhost:5000/api/contact', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            });
-
-            const apiData = await apiResponse.json();
-            console.log('Saved to database:', apiData);
+            console.log('Email sent successfully:', emailResult.text);
 
             // Success
             setStatus("success");
@@ -274,7 +253,7 @@ export const Contact = () => {
     };
 
     return (
-        <section id="contact" className="min-h-screen py-24 px-6 relative overflow-hidden">
+        <section id="contact" className="min-h-screen py-24 px-6 pb-8 relative overflow-hidden">
             <StarfieldBackground />
 
             <div className="max-w-7xl mx-auto relative z-10">

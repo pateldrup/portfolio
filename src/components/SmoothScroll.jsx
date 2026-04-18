@@ -4,13 +4,10 @@ import Lenis from "lenis";
 export const SmoothScroll = ({ children }) => {
     useEffect(() => {
         const lenis = new Lenis({
-            duration: 1.2,
-            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-            direction: "vertical",
-            gestureDirection: "vertical",
-            smooth: true,
-            mouseMultiplier: 1,
-            smoothTouch: false,
+            lerp: 0.05, // 0.05 is the sweet spot for god-level buttery scrolling
+            wheelMultiplier: 1.0,
+            smoothWheel: true,
+            smoothTouch: false, // Native touch is already hardware accelerated
             touchMultiplier: 2,
         });
 
