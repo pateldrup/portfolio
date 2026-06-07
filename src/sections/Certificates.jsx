@@ -1,5 +1,5 @@
-import { useMemo } from "react";
-import { motion } from "framer-motion";
+import { useState, useMemo } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { FaExternalLinkAlt, FaAward } from "react-icons/fa";
 
 // Certificate data
@@ -13,6 +13,7 @@ const CERTIFICATES = [
         image: "https://i.ibb.co/svJmfP9D/cert-c.png",
         tags: ["C", "Programming"],
         link: "https://www.sololearn.com/certificates/CC-IFHOOVV1",
+        category: "Certifications",
     },
     {
         id: 2,
@@ -23,6 +24,7 @@ const CERTIFICATES = [
         image: "/cert-css.png",
         tags: ["CSS", "Frontend"],
         link: "https://www.hackerrank.com/certificates/9964dce4447d",
+        category: "Certifications",
     },
     {
         id: 3,
@@ -33,6 +35,7 @@ const CERTIFICATES = [
         image: "/cert-js.png",
         tags: ["JavaScript", "Frontend"],
         link: "https://www.hackerrank.com/certificates/609de6b7132f",
+        category: "Certifications",
     },
     {
         id: 4,
@@ -43,6 +46,18 @@ const CERTIFICATES = [
         image: "/cert-ps.png",
         tags: ["Data Structures", "Algorithms"],
         link: "https://www.hackerrank.com/certificates/630d9e2f1255",
+        category: "Certifications",
+    },
+    {
+        id: 5,
+        title: "Tic Tech Toe '26",
+        issuer: "IEEE SB DAIICT",
+        date: "April 2026",
+        description: "In recognition of valuable participation at Tic Tech Toe '26, a hackathon organized by IEEE SB DAIICT from 10th to 12th April, 2026.",
+        image: "/cert-hackathon.png",
+        tags: ["Hackathon", "Participation", "IEEE"],
+        link: "/cert-hackathon.png",
+        category: "Hackathons",
     },
 ];
 
@@ -82,16 +97,16 @@ const StarfieldBackground = () => {
 };
 
 // Certificate Card Component - Optimized
-const CertificateCard = ({ certificate, index }) => {
+const CertificateCard = ({ certificate }) => {
     return (
         <motion.div
+            layout
             className="relative group"
             initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-20px" }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 30 }}
             transition={{
                 duration: 0.4,
-                delay: index * 0.1,
                 ease: "easeOut",
             }}
         >
@@ -166,6 +181,14 @@ const CertificateCard = ({ certificate, index }) => {
 };
 
 export const Certificates = () => {
+    const [filter, setFilter] = useState("All");
+
+    const filteredCertificates = useMemo(() => {
+        return filter === "All"
+            ? CERTIFICATES
+            : CERTIFICATES.filter((cert) => cert.category === filter);
+    }, [filter]);
+
     return (
         <section id="certificates" className="min-h-screen py-24 px-6 relative overflow-hidden">
             <StarfieldBackground />
@@ -173,7 +196,7 @@ export const Certificates = () => {
             <div className="max-w-6xl mx-auto relative z-10">
                 {/* Header */}
                 <motion.h2
-                    className="text-3xl md:text-5xl font-bold text-white mb-16"
+                    className="text-3xl md:text-5xl font-bold text-white mb-12"
                     initial={{ opacity: 0, y: -20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -182,11 +205,29 @@ export const Certificates = () => {
                     <span className="text-cyan-400">Certificates</span>
                 </motion.h2>
 
+                {/* Filters */}
+                <div className="flex justify-start flex-wrap gap-4 mb-12">
+                    {["All", "Certifications", "Hackathons"].map((category) => (
+                        <button
+                            key={category}
+                            onClick={() => setFilter(category)}
+                            className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${filter === category
+                                ? "bg-cyan-600 text-white shadow-lg shadow-cyan-500/25"
+                                : "bg-white/5 text-gray-400 hover:text-white hover:bg-white/10"
+                                }`}
+                        >
+                            {category}
+                        </button>
+                    ))}
+                </div>
+
                 {/* Certificates Grid */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                    {CERTIFICATES.map((cert, index) => (
-                        <CertificateCard key={cert.id} certificate={cert} index={index} />
-                    ))}
+                    <AnimatePresence mode="popLayout">
+                        {filteredCertificates.map((cert) => (
+                            <CertificateCard key={cert.id} certificate={cert} />
+                        ))}
+                    </AnimatePresence>
                 </div>
             </div>
         </section>

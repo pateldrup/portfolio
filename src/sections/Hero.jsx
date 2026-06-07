@@ -79,7 +79,7 @@ export const Hero = () => {
                     {/* Social Links */}
                     <div className="hero-reveal flex gap-6 justify-center md:justify-start">
                         <a
-                            href="https://github.com/"
+                            href="https://github.com/pateldrup"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-gray-500 hover:text-white transition-colors duration-300"
@@ -106,7 +106,7 @@ export const Hero = () => {
                             <SiLeetcode size={28} />
                         </a>
                         <a
-                            href="https://twitter.com/"
+                            href="https://x.com/PatelDrup"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-gray-500 hover:text-blue-400 transition-colors duration-300"

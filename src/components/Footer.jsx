@@ -22,7 +22,7 @@ const socialLinks = [
     {
         id: "twitter",
         icon: FaTwitter,
-        href: "https://x.com/pateldrup?s=11",
+        href: "https://x.com/PatelDrup",
         color: "#FFFFFF",
         hoverColor: "#1DA1F2",
     },

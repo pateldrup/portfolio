@@ -4,6 +4,28 @@ import { FaGithub, FaExternalLinkAlt, FaYoutube, FaFigma } from "react-icons/fa"
 
 const projectsData = [
     {
+        id: 16,
+        title: "CityDoctor",
+        category: "Full Stack",
+        image: "/project-citydoctor.png",
+        description: "A full-stack medical assistance platform designed for global travelers. Enables users to search verified, English-speaking doctors, estimate treatment costs, locate emergency support, and navigate clinics via integrated maps.",
+        tech: ["React", "Tailwind CSS", "Node.js", "Express", "MongoDB"],
+        github: "https://github.com/pateldrup/cityDoctor.git",
+        live: "https://frontend-chi-three-70.vercel.app/",
+        video: "https://youtu.be/ouEaW7kXlKA?si=CHAn4mMXx4Y-vtHA",
+        figma: "https://www.figma.com/design/Y0DBg2uPEGtj2sC3ePOUZ8/Untitled?node-id=9-101"
+    },
+    {
+        id: 15,
+        title: "PincodeIndia",
+        category: "Full Stack",
+        image: "/project-pincode.png",
+        description: "A full-stack web application to explore, filter, search, and export data from 154,000+ Indian post offices. Features interactive dashboards, detailed state-wise office counts, delivery distribution charts, and pincode lookup tools.",
+        tech: ["React", "Tailwind CSS", "Node.js", "Express", "MongoDB"],
+        github: "https://github.com/pateldrup/all_india_pincode.git",
+        live: "https://all-india-pincode.vercel.app/dashboard"
+    },
+    {
         id: 1,
         title: "CNBC clone",
         category: "Full Stack",
