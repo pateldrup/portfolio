@@ -8,8 +8,7 @@
 
 ## 🌐 Portfolio
 
-🔗 Live Demo: [https://drup-patel-portfolio-link.com  
-](https://portfolio-druppatels-projects.vercel.app/)
+🔗 Live Demo: [https://drup-patel-portfolio.vercel.app/](https://drup-patel-portfolio.vercel.app/)
 ---
 
 ## 🛠️ Tech Stack
