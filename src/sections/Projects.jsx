@@ -11,7 +11,7 @@ const projectsData = [
         description: "A full-stack medical assistance platform designed for global travelers. Enables users to search verified, English-speaking doctors, estimate treatment costs, locate emergency support, and navigate clinics via integrated maps.",
         tech: ["React", "Tailwind CSS", "Node.js", "Express", "MongoDB"],
         github: "https://github.com/pateldrup/cityDoctor.git",
-        live: "https://frontend-chi-three-70.vercel.app/",
+        live: "https://city-doctor-five.vercel.app/",
         video: "https://youtu.be/ouEaW7kXlKA?si=CHAn4mMXx4Y-vtHA",
         figma: "https://www.figma.com/design/Y0DBg2uPEGtj2sC3ePOUZ8/Untitled?node-id=9-101"
     },
